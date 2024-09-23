@@ -165,7 +165,6 @@ class HomeScreen extends StatelessWidget {
                           height: 130,
                           width: 130,
                           margin: const EdgeInsets.only(right: 10),
-                          color: Colors.red,
                           child: Image.asset(
                             "assets/images/myList$idx.png",
                             fit: BoxFit.cover,
@@ -211,7 +210,6 @@ class HomeScreen extends StatelessWidget {
                     height: 220,
                     width: 130,
                     margin: const EdgeInsets.only(right: 16),
-                    color: Colors.red,
                     child: Image.asset(
                       "assets/images/moviePlus$idx.png",
                       fit: BoxFit.cover,
@@ -245,7 +243,7 @@ class HomeScreen extends StatelessWidget {
                     width: screenWidth,
                     alignment: Alignment.center,
                     margin: const EdgeInsets.only(
-                        left: 48, right: 48, bottom: 32, top: 24),
+                        left: 48, right: 48, bottom: 20, top: 24),
                     color: const Color.fromRGBO(137, 42, 236, 0.3),
                     child: Text(
                       "EXPLORE",
@@ -258,7 +256,150 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 16,
+              ),
+              child: Text(
+                "New Releases",
+                style: GoogleFonts.poppins(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            const Gap(10),
+            Container(
+              padding: const EdgeInsets.only(left: 16),
+              height: 130,
+              width: screenWidth,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 4,
+                itemBuilder: (context, idx) {
+                  return Container(
+                    width: 220,
+                    height: 130,
+                    margin: const EdgeInsets.only(right: 16),
+                    child: Image.asset(
+                      "assets/images/newRelease$idx.png",
+                      fit: BoxFit.cover,
+                    ),
+                  );
+                },
+              ),
+            ),
+            const Gap(10),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 16,
+              ),
+              child: Text(
+                "Top Movies",
+                style: GoogleFonts.poppins(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            const Gap(10),
+            Container(
+              padding: const EdgeInsets.only(left: 16),
+              height: 220,
+              width: screenWidth,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 4,
+                itemBuilder: (context, idx) {
+                  return Container(
+                    height: 220,
+                    width: 130,
+                    margin: const EdgeInsets.only(right: 16),
+                    child: Image.asset(
+                      "assets/images/topMovies$idx.png",
+                      fit: BoxFit.cover,
+                    ),
+                  );
+                },
+              ),
+            ),
+            const Gap(16),
+            Center(
+              child: Column(
+                children: [
+                  Text(
+                    "Our Top 10",
+                    style: GoogleFonts.poppins(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      color: const Color.fromRGBO(255, 255, 255, 0.5),
+                    ),
+                  ),
+                  Text(
+                    "Welcome to Movie+",
+                    style: GoogleFonts.poppins(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Text(
+                    "Lorem ipsum dolor sit amet consectetur",
+                    style: GoogleFonts.poppins(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const Gap(16),
+            Container(
+              padding: const EdgeInsets.only(left: 16),
+              height: 230,
+              width: screenWidth,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 4,
+                itemBuilder: (context, idx) {
+                  return Stack(
+                    children: [
+                      Container(
+                        height: 230,
+                        width: 130,
+                        padding: const EdgeInsets.only(left: 6),
+                        margin: const EdgeInsets.only(right: 16),
+                        child: Image.asset(
+                          "assets/images/plusTop$idx.png",
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Container(
+                        height: 15,
+                        width: 30,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(3),
+                          color: Colors.white,
+                        ),
+                        child: Text(
+                          "#$idx",
+                          style: GoogleFonts.poppins(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ),
+            const Gap(16),
           ],
         ),
       ),
