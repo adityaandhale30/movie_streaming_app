@@ -9,6 +9,7 @@ class DrawerCustom extends StatelessWidget {
       backgroundColor: Color.fromRGBO(10, 7, 30, 1),
       width: 200,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Container(
             height: 30,

@@ -11,6 +11,7 @@ class MovieInfoScreen extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
+      
       backgroundColor: const Color.fromRGBO(10, 7, 30, 1),
       body: SingleChildScrollView(
         child: Column(

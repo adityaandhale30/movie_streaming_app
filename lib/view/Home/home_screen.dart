@@ -17,7 +17,9 @@ class HomeScreen extends StatelessWidget {
 
     var controller = Get.put(DrawerControllerCustom());
     return Scaffold(
-      drawer: DrawerCustom(),
+    
+      key: controller.scaffoldKey,
+      drawer: const DrawerCustom(),
       backgroundColor: const Color.fromRGBO(10, 7, 30, 1),
       body: SingleChildScrollView(
         child: Column(
