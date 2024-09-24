@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_streaming/view/Info/movieInfo_screen.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -161,13 +163,18 @@ class HomeScreen extends StatelessWidget {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                          height: 130,
-                          width: 130,
-                          margin: const EdgeInsets.only(right: 10),
-                          child: Image.asset(
-                            "assets/images/myList$idx.png",
-                            fit: BoxFit.cover,
+                        GestureDetector(
+                          onTap: () {
+                            Get.to(const MovieInfoScreen());
+                          },
+                          child: Container(
+                            height: 130,
+                            width: 130,
+                            margin: const EdgeInsets.only(right: 10),
+                            child: Image.asset(
+                              "assets/images/myList$idx.png",
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                         const Gap(5),
