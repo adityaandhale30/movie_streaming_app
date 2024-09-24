@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_streaming/controller/drawerController.dart';
 import 'package:movie_streaming/view/Info/movieInfo_screen.dart';
+import 'package:movie_streaming/view/drawerCustom.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,7 +14,10 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+
+    var controller = Get.put(DrawerControllerCustom());
     return Scaffold(
+      drawer: DrawerCustom(),
       backgroundColor: const Color.fromRGBO(10, 7, 30, 1),
       body: SingleChildScrollView(
         child: Column(
@@ -48,10 +53,13 @@ class HomeScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 16, right: 16, top: 50),
                   child: Row(
                     children: [
-                      const Icon(
-                        Icons.menu_outlined,
-                        color: Colors.white,
-                        size: 34,
+                      GestureDetector(
+                        onTap: controller.openDrawer,
+                        child: const Icon(
+                          Icons.menu_outlined,
+                          color: Colors.white,
+                          size: 34,
+                        ),
                       ),
                       const Spacer(),
                       const Icon(
@@ -394,7 +402,7 @@ class HomeScreen extends StatelessWidget {
                           color: Colors.white,
                         ),
                         child: Text(
-                          "#$idx",
+                          "#${idx + 1}",
                           style: GoogleFonts.poppins(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,

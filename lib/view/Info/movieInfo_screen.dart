@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MovieInfoScreen extends StatelessWidget {
@@ -39,23 +40,28 @@ class MovieInfoScreen extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 16, right: 16, top: 50),
+                  padding: const EdgeInsets.only(left: 12, right: 16, top: 80),
                   child: Row(
                     children: [
-                      const Icon(
-                        Icons.arrow_back_ios_outlined,
-                        color: Colors.white,
-                        size: 34,
+                      GestureDetector(
+                        onTap: () {
+                          Get.back();
+                        },
+                        child: const Icon(
+                          Icons.arrow_back_ios_outlined,
+                          color: Colors.white,
+                          size: 28,
+                        ),
                       ),
                       const Spacer(),
                       const Icon(
                         Icons.desktop_windows_outlined,
                         color: Colors.white,
-                        size: 34,
+                        size: 28,
                       ),
                       Container(
-                        height: 34,
-                        width: 34,
+                        height: 32,
+                        width: 32,
                         margin: const EdgeInsets.only(left: 10),
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
@@ -131,7 +137,7 @@ class MovieInfoScreen extends StatelessWidget {
               child: Text(
                 "Lorem ipsum dolor sit amet consectetur. Ultrices quis quam sit amet. Id duis affgorae dignissim non suspendisse nulla leo.",
                 style: GoogleFonts.poppins(
-                  fontSize: 20,
+                  fontSize: 14,
                   fontWeight: FontWeight.w400,
                   color: Colors.white,
                 ),
@@ -232,51 +238,89 @@ class MovieInfoScreen extends StatelessWidget {
               ),
             ),
             const Gap(16),
-            Center(
-              child: Column(
-                children: [
-                  Text(
-                    "Cast and crew",
-                    style: GoogleFonts.poppins(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.white,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      "    Cast and crew",
+                      style: GoogleFonts.poppins(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white,
+                      ),
                     ),
-                  ),
-                  Row(
-                    children: [
-                      Column(
+                    const Spacer(),
+                    IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.keyboard_arrow_up,
+                          size: 34,
+                          color: Color.fromRGBO(255, 255, 255, 0.7),
+                        )),
+                  ],
+                ),
+                // const Gap(10),
+                Row(
+                  children: [
+                    const Gap(10),
+                    Text(
+                      """   Jean Valjean
+    Fantine
+    Javert
+    Cosette
+    Marius Pontmercy""",
+                      style: GoogleFonts.poppins(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const Gap(20),
+                    Text(
+                      """      Jean Valjean
+       Fantine
+       Javert
+       Cosette
+       Marius Pontmercy""",
+                      style: GoogleFonts.poppins(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 16, top: 24),
+                  child: Column(
+                    children: List.generate(4, (idx) {
+                      return Row(
                         children: [
                           Text(
-                            "Lorem ir",
+                            "Producers",
                             style: GoogleFonts.poppins(
-                              fontSize: 12,
+                              fontSize: 15,
                               fontWeight: FontWeight.w400,
                               color: Colors.white,
                             ),
                           ),
+                          const Spacer(),
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.keyboard_arrow_down,
+                              size: 32,
+                              color: Color.fromRGBO(255, 255, 255, 0.7),
+                            ),
+                          ),
                         ],
-                      ),
-                    ],
+                      );
+                    }),
                   ),
-                  Container(
-                    height: 38,
-                    width: screenWidth,
-                    alignment: Alignment.center,
-                    margin: const EdgeInsets.only(
-                        left: 48, right: 48, bottom: 20, top: 24),
-                    color: const Color.fromRGBO(137, 42, 236, 0.3),
-                    child: Text(
-                      "EXPLORE",
-                      style: GoogleFonts.poppins(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+                )
+              ],
             ),
           ],
         ),
