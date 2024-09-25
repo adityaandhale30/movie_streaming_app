@@ -11,7 +11,6 @@ class MovieInfoScreen extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      
       backgroundColor: const Color.fromRGBO(10, 7, 30, 1),
       body: SingleChildScrollView(
         child: Column(
@@ -172,7 +171,7 @@ class MovieInfoScreen extends StatelessWidget {
             const Gap(10),
             Container(
               padding: const EdgeInsets.only(left: 16),
-              height: 155,
+              height: 170,
               width: screenWidth,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -183,20 +182,38 @@ class MovieInfoScreen extends StatelessWidget {
                       children: [
                         Container(
                           height: 130,
-                          width: 130,
+                          width: 220,
                           margin: const EdgeInsets.only(right: 10),
                           child: Image.asset(
-                            "assets/images/myList$idx.png",
+                            "assets/images/feature$idx.png",
                             fit: BoxFit.cover,
                           ),
                         ),
                         const Gap(5),
+                        Row(
+                          children: [
+                            Text(
+                              "Los miserables:Extra",
+                              style: GoogleFonts.poppins(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.white,
+                              ),
+                            ),
+                            const Gap(70),
+                            const Icon(
+                              Icons.download_outlined,
+                              color: Colors.white,
+                              size: 18,
+                            ),
+                          ],
+                        ),
                         Text(
-                          "Los miserables",
+                          "5 MIN     13+",
                           style: GoogleFonts.poppins(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
-                            color: Colors.white,
+                            color: const Color.fromRGBO(255, 255, 255, 0.7),
                           ),
                         ),
                       ],

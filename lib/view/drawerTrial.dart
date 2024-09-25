@@ -47,7 +47,7 @@ class DrawerCustomTrial extends StatelessWidget {
           ],
         ),
       ),
-      child: Scaffold(),
+      child: const Scaffold(),
     );
   }
 }

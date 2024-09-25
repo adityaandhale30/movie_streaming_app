@@ -49,8 +49,7 @@ class LandingPageScreen extends StatelessWidget {
                     padding:
                         const EdgeInsets.only(left: 56, right: 56, bottom: 50),
                     child: Text(
-                      """WE HAVE THE BEST
-            MOVIES""",
+                      """WE HAVE THE BEST MOVIES""",
                       style: GoogleFonts.secularOne(
                         fontSize: 30,
                         color: Colors.white,

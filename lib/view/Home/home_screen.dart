@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movie_streaming/controller/drawerController.dart';
+import 'package:movie_streaming/controller/drawer_Controller.dart';
 import 'package:movie_streaming/view/Info/movieInfo_screen.dart';
 import 'package:movie_streaming/view/drawerCustom.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
