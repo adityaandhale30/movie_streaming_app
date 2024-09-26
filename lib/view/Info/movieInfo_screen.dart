@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_streaming/view/videoPlayCustom.dart';
 
 class MovieInfoScreen extends StatelessWidget {
   const MovieInfoScreen({super.key});
@@ -110,10 +111,15 @@ class MovieInfoScreen extends StatelessWidget {
                   left: 16,
                   child: Row(
                     children: [
-                      const Icon(
-                        Icons.play_circle_outlined,
-                        color: Colors.white,
-                        size: 56,
+                      GestureDetector(
+                        onTap: () {
+                          Get.to(const VideoPlayCustom());
+                        },
+                        child: const Icon(
+                          Icons.play_circle_outlined,
+                          color: Colors.white,
+                          size: 56,
+                        ),
                       ),
                       Gap(screenWidth / 1.7),
                       const Icon(
