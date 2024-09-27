@@ -7,9 +7,8 @@ class VideoPlayerControllerCustom extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    videoPlayerController = VideoPlayerController.networkUrl(
-      Uri.parse(
-          'https://github.com/adityaandhale30/AutoRobo-IOT/blob/main/Maze-Runner%20Winner%20%F0%9F%A5%87%20.mp4'),
+    videoPlayerController = VideoPlayerController.asset(
+      "assets/songReel.mp4"
     )..initialize().then((_) {
         videoPlayerController.play();
         videoPlayerController.setLooping(true);

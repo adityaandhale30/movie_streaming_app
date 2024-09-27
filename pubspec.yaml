@@ -13,6 +13,7 @@ dependencies:
   gap: ^3.0.1
   get: ^4.6.6
   google_fonts: ^6.2.1
+  http: ^1.2.2
   page_indicator_plus: ^1.0.4
   page_view_dot_indicator: ^2.3.0
   smooth_page_indicator: ^1.2.0+3
