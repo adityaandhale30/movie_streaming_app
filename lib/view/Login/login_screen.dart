@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_streaming/view/Home/home_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -51,15 +53,15 @@ class LoginScreen extends StatelessWidget {
                     size: 32,
                     color: Colors.white,
                   ),
-                  const Gap(10),
+                  const Gap(16),
                   Text(
                     "Create\nAccount",
                     style: GoogleFonts.secularOne(
-                      fontSize: 48,
+                      fontSize: 42,
                       color: Colors.white,
                     ),
                   ),
-                  const Gap(16),
+                  const Gap(36),
                   Text(
                     "Email",
                     style: GoogleFonts.poppins(
@@ -68,8 +70,12 @@ class LoginScreen extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
-                  const Gap(16),
+                  const Gap(8),
                   TextField(
+                    style: GoogleFonts.poppins(
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
                     decoration: InputDecoration(
                         contentPadding: const EdgeInsets.all(16),
                         hintText: "e.g. example@mail.com",
@@ -107,8 +113,14 @@ class LoginScreen extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
-                  const Gap(16),
+                  const Gap(8),
                   TextField(
+                    obscureText: true,
+                    obscuringCharacter: '*',
+                    style: GoogleFonts.poppins(
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
                     decoration: InputDecoration(
                       suffixIcon: const Icon(Icons.remove_red_eye_outlined),
                       suffixIconColor: Colors.white,
@@ -143,9 +155,15 @@ class LoginScreen extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
-                  const Gap(16),
-                  const TextField(
-                    decoration: InputDecoration(
+                  const Gap(8),
+                  TextField(
+                    obscureText: true,
+                    obscuringCharacter: '*',
+                    style: GoogleFonts.poppins(
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
+                    decoration: const InputDecoration(
                       suffixIcon: Icon(Icons.remove_red_eye_outlined),
                       suffixIconColor: Colors.white,
                       contentPadding: EdgeInsets.all(16),
@@ -165,12 +183,15 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Gap(16),
+                  const Gap(16),
                   Row(
                     children: [
-                      const Icon(
-                        Icons.crop_square,
-                        color: Colors.white,
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.crop_square,
+                          color: Colors.white,
+                        ),
                       ),
                       Text(
                         "   I agree to the Terms & Privacy Policy",
@@ -182,25 +203,30 @@ class LoginScreen extends StatelessWidget {
                     ],
                   ),
                   const Gap(40),
-                  Container(
-                    width: screenWidth,
-                    height: 45,
-                    margin: EdgeInsets.only(right: 8),
-                    alignment: Alignment.center,
-                    decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          Color.fromRGBO(54, 53, 236, 1),
-                          Color.fromRGBO(137, 42, 236, 1),
-                        ],
+                  GestureDetector(
+                    onTap: () {
+                      Get.off(()=>const HomeScreen());
+                    },
+                    child: Container(
+                      width: screenWidth,
+                      height: 45,
+                      margin: const EdgeInsets.only(right: 8),
+                      alignment: Alignment.center,
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            Color.fromRGBO(54, 53, 236, 1),
+                            Color.fromRGBO(137, 42, 236, 1),
+                          ],
+                        ),
                       ),
-                    ),
-                    child: Text(
-                      "Create account",
-                      style: GoogleFonts.poppins(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white,
+                      child: Text(
+                        "Create account",
+                        style: GoogleFonts.poppins(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_streaming/view/Login/login_screen.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
 
 class LandingPageScreen extends StatelessWidget {
@@ -81,32 +83,37 @@ class LandingPageScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
-                    width: screenWidth,
-                    height: 45,
-                    alignment: Alignment.center,
-                    margin: const EdgeInsets.only(top: 24),
-                    decoration: const BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color.fromRGBO(0, 0, 0, 0.15),
-                          blurRadius: 15,
-                          offset: Offset(2, 2),
-                        ),
-                      ],
-                      gradient: LinearGradient(
-                        colors: [
-                          Color.fromRGBO(54, 53, 236, 1),
-                          Color.fromRGBO(137, 42, 236, 1),
+                  GestureDetector(
+                    onTap: () {
+                      Get.off(()=>const LoginScreen());
+                    },
+                    child: Container(
+                      width: screenWidth,
+                      height: 45,
+                      alignment: Alignment.center,
+                      margin: const EdgeInsets.only(top: 24),
+                      decoration: const BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color.fromRGBO(0, 0, 0, 0.15),
+                            blurRadius: 15,
+                            offset: Offset(2, 2),
+                          ),
                         ],
+                        gradient: LinearGradient(
+                          colors: [
+                            Color.fromRGBO(54, 53, 236, 1),
+                            Color.fromRGBO(137, 42, 236, 1),
+                          ],
+                        ),
                       ),
-                    ),
-                    child: Text(
-                      "Suscribete a Movie+",
-                      style: GoogleFonts.poppins(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w300,
-                        color: const Color.fromRGBO(250, 243, 221, 1),
+                      child: Text(
+                        "Suscribete a Movie+",
+                        style: GoogleFonts.poppins(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w300,
+                          color: const Color.fromRGBO(250, 243, 221, 1),
+                        ),
                       ),
                     ),
                   ),
