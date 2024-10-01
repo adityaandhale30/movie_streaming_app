@@ -24,7 +24,7 @@ class MovieList1 extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            Get.to(const MovieInfoScreen());
+                            Get.to(()=>const MovieInfoScreen());
                           },
                           child: Container(
                             height: 130,

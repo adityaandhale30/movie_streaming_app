@@ -16,6 +16,7 @@ class MovieInfoScreen extends StatelessWidget {
       backgroundColor: const Color.fromRGBO(10, 7, 30, 1),
       body: CustomScrollView(
         slivers: [
+          
           SliverAppBar(
             floating: true,
             pinned: true,
