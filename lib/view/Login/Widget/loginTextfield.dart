@@ -1,22 +1,19 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_streaming/view/Home/home_screen.dart';
 
-bool isTaped = false;
-
 class LoginTextField extends StatelessWidget {
   const LoginTextField({super.key});
 
-  void _changeHint() {
-    isTaped = !isTaped;
-  }
-
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.sizeOf(context).width;
+    double screenHeight = MediaQuery.sizeOf(context).height;
+    log(screenHeight.toString());
     return Padding(
       padding: EdgeInsets.only(left: 26, right: 16, top: screenHeight / 10),
       child: Column(
@@ -89,7 +86,6 @@ class LoginTextField extends StatelessWidget {
           ),
           const Gap(8),
           TextField(
-            onTap: _changeHint,
             obscureText: true,
             obscuringCharacter: '*',
             style: GoogleFonts.poppins(
@@ -100,7 +96,7 @@ class LoginTextField extends StatelessWidget {
               suffixIcon: const Icon(Icons.remove_red_eye_outlined),
               suffixIconColor: Colors.white,
               contentPadding: const EdgeInsets.all(16),
-              hintText:isTaped?"": "e.g. Example2006",
+              hintText: "e.g. Example2006",
               hintStyle: GoogleFonts.poppins(
                 fontSize: 16,
                 color: Colors.white,
@@ -132,7 +128,6 @@ class LoginTextField extends StatelessWidget {
           ),
           const Gap(8),
           TextField(
-            onTap: _changeHint,
             obscureText: true,
             obscuringCharacter: '*',
             style: GoogleFonts.poppins(
