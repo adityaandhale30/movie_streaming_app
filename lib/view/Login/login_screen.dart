@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_streaming/view/Login/Widget/loginTextfield.dart';
 
 
 class LoginScreen extends StatelessWidget {
@@ -39,7 +40,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
             ),
-            
+            const LoginTextField(),
           ],
         ),
       ),
